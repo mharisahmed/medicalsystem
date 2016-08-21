@@ -11,8 +11,7 @@ namespace medicalsystem.Controllers
     {
         // GET: UserManagement
         public ActionResult Index()
-        {
-            
+        {  
             return View();
         }
 
@@ -20,22 +19,18 @@ namespace medicalsystem.Controllers
         [HttpPost]
         public ActionResult Index(string txtusername, string txtpass)
         {
-
-            if (Login(txtusername, txtpass)) {
+            if (DataServices.Services.LoginService.Instance.LoginAuth(txtusername, txtpass)) {
                 Session["Logged_in"] = true;
                 return RedirectToAction("Index", "Home");
             }
             else
             {
-                return RedirectToAction("Index", "UserManagement");
-            }
-            
+                ViewBag.Error = "Invalid Username or Password!";
+                return View();
+                //return RedirectToAction("Index", "UserManagement");
+            }         
         }
 
-        public bool Login(string username, string pass)
-        {
-            return DataServices.Services.LoginService.Instance.LoginAuth(username, pass);
-        }
 
 
     }
