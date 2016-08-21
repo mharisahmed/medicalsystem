@@ -151,6 +151,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserManagementController.cs" />
+    <Compile Include="DataServices\DataContextHelper.cs" />
+    <Compile Include="DataServices\Services\LoginService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

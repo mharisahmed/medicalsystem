@@ -22,16 +22,18 @@
                     <strong>   Enter Details To Login </strong>
                 </div>
                 <div class="panel-body">
-                    <form role="form">
+                    <form role="form" method="post">
                         <br />
+
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                            <input type="text" class="form-control" placeholder="Your Username " />
+                            <input type="text" name="txtusername" class="form-control" placeholder="Your Username " />
                         </div>
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                            <input type="password" class="form-control" placeholder="Your Password" />
+                            <input type="password" name="txtpass" class="form-control" placeholder="Your Password" />
                         </div>
+
                         <div class="form-group">
                             <label class="checkbox-inline">
                                 <input type="checkbox" /> Remember me
@@ -41,7 +43,8 @@
                             </span>
                         </div>
 
-                        <a href="@Url.Action("Index", "Home")" class="btn btn-primary ">Login Now</a>
+                        <input type="submit" class="btn btn-primary" value="Login Now" />
+                        @*<a href="@Url.Action("Login", "UserManagement")" class="btn btn-primary ">Login Now</a>*@
                         <hr />
                         Not register ? <a href="registeration.html">click here </a>
                     </form>

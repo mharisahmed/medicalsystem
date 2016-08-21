@@ -11,6 +11,7 @@ namespace medicalsystem.Controllers
     {
         // GET: Home
         public ActionResult Index()
+
         { 
             var db = new  PetaPoco.Database("constrng");
             var tblcompnay = db.Fetch<tblCompay>("SELECT * FROM tblCompay");
